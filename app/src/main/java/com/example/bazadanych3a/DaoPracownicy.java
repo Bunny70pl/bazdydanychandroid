@@ -7,6 +7,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import kotlinx.coroutines.DelicateCoroutinesApi;
 
@@ -22,12 +23,12 @@ public interface DaoPracownicy {
     public void usunPracownika(Pracownik pracownik);
 
     @Update
-    public void zaktualizujDanePracownika();
+    public void zaktualizujDanePracownika(Pracownik pracownik);
 
-    @Query("Select * from Pracownicy where jezykOjczysty='Polski'")
-    public ArrayList<Pracownik> wypiszPracownikowGdzieJezykToPolski();
+    //@Query("Select * from Pracownicy where jezykOjczysty='Polski'")
+    //public List<Pracownik> wypiszPracownikowGdzieJezykToPolski();
 
-    @Query("Select * from pracownicy where jezykObcyKomunikatywny = :jezyk")
-    public ArrayList<Pracownik> wypiszPracownikowMowiacychWJezuku(String jezyk);
+    //@Query("Select * from Pracownicy where jezykOjczysty = :jezyk")
+    //public List<Pracownik> wypiszPracownikowMowiacychWJezuku(String jezyk);
 
 }

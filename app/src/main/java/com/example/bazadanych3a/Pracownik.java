@@ -25,7 +25,7 @@ public class Pracownik {
 
     }
 
-    public Pracownik(int id, String imie, String nazwisko, String jezykOjczysty, String jezykObcyKomunikatywny, Double wynagrodzenie, String stanowisko) {
+    public Pracownik(String imie, String nazwisko, String jezykOjczysty, String jezykObcyKomunikatywny, Double wynagrodzenie, String stanowisko) {
         this.id =0;
         this.imie = imie;
         this.nazwisko = nazwisko;
