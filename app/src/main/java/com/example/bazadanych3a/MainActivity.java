@@ -2,6 +2,9 @@ package com.example.bazadanych3a;
 
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -12,6 +15,12 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
+
+import org.jetbrains.annotations.Async;
+
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
     private DataBasePracownicy dataBasePracownicy;
@@ -41,6 +50,27 @@ public class MainActivity extends AppCompatActivity {
                 DataBasePracownicy.class,
                 "pracownicyDB"
                 ).addCallback(myCallBack).allowMainThreadQueries().build();
+        dodajDaneDoBazyWTle();
+    }
+    private void dodajDaneDoBazyWTle(){
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        Handler handler = new Handler(Looper.getMainLooper());
+        executorService.execute(
+                new Runnable() {
+                    @Override
+                    public void run() {
+                        dataBasePracownicy.getDaoPracownicy().dodajPracownika(new Pracownik("Jas","Nowak","Polski","Angielski",12300.99,"Programista"));
+                        handler.post(
+                                new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(MainActivity.this, "Dodano do bazy", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                        );
+                    }
+                }
+        );
     }
 }
 

@@ -25,10 +25,11 @@ public interface DaoPracownicy {
     @Update
     public void zaktualizujDanePracownika(Pracownik pracownik);
 
-    //@Query("Select * from Pracownicy where jezykOjczysty='Polski'")
-    //public List<Pracownik> wypiszPracownikowGdzieJezykToPolski();
+    //@Query("Select * from pracownicy where jezykOjczysty='polski'")
+    //public List<Pracownik> wypiszPracownikowPolskoJezycznych();
 
-    //@Query("Select * from Pracownicy where jezykOjczysty = :jezyk")
-    //public List<Pracownik> wypiszPracownikowMowiacychWJezuku(String jezyk);
+   //@Query("Select * from pracownicy where jezykObcyKomunikatywny = :jezyk")
+    //public List<Pracownik> wypiszPracownikowMowiacychJezykiem(String jezyk);
+
 
 }

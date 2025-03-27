@@ -5,7 +5,7 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "Pracownicy")
+@Entity(tableName = "pracownicy")
 public class Pracownik {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name ="id_pracownika")
@@ -15,6 +15,7 @@ public class Pracownik {
     private String imie;
     @ColumnInfo(name ="naziwsko_pracownika")
     private String nazwisko;
+    @ColumnInfo(name ="jezykOjczysty")
     private String jezykOjczysty;
     private String jezykObcyKomunikatywny;
     private Double wynagrodzenie;
