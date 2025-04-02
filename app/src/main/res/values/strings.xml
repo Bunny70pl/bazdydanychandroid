@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Bazadanych3a</string>
+    <string-array name="stanowiska">
+        <item>progrmiasta junior</item>
+        <item>progrmiasta sredni</item>
+        <item>progrmiasta senior</item>
+        <item>tester manulany</item>
+        <item>tester senior</item>
+        <item>scrum master</item>
+    </string-array>
 </resources>

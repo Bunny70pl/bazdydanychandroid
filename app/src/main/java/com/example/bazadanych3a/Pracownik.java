@@ -2,8 +2,8 @@ package com.example.bazadanych3a;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
-import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+import androidx.room.Ignore;
 
 @Entity(tableName = "pracownicy")
 public class Pracownik {
@@ -24,6 +24,13 @@ public class Pracownik {
     @Ignore
     public Pracownik() {
 
+    }
+
+    @Override
+    public String toString() {
+        return  "imie: " + imie + "\n nazwisko: " + nazwisko  + "\n stanowisko: " + stanowisko  + "\n jezyk ojczysty: " + jezykOjczysty  + "\n jezyk obcy: " + jezykObcyKomunikatywny
+                + "\n wynagrodzenie: " + wynagrodzenie
+                ;
     }
 
     public Pracownik(String imie, String nazwisko, String jezykOjczysty, String jezykObcyKomunikatywny, Double wynagrodzenie, String stanowisko) {
